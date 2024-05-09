@@ -1,0 +1,69 @@
+server:
+  port: 8080
+
+spring:
+  elasticsearch:
+    uris: http://localhost:9200
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/mall_tiny
+    username: root
+    password: Zjut_274279
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+
+    redis:
+      host: localhost
+      database: 0
+      port: 6379
+      password:
+      timeout: 1000ms
+      lettuce:
+        pool:
+          max-idle: 8
+          max-active: 8
+          min-idle: 0
+          max-wait: -1ms
+
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        security=TRACE
+
+#jwt:
+#  public:
+#    key: publicKey
+#  private:
+#    key: privateKey
+
+
+#jwt:
+#
+#  secret: mySecret
+#  expiration: 604800
+
+
+
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ant_path_matcher
+
+mybatis:
+  mapper-locations:
+    - classpath:dao/*.xml
+    - classpath*:com/**/mapper/*.xml
+
+#springfox:
+#  documentation:
+#    enabled: true
+#    open-api:
+#      enabled: true
+#    swagger-ui:
+#      enabled: true
+#      base-url: /doc
+#secure:
+#  ignored:
+#    ignore-urls:
